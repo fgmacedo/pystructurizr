@@ -77,15 +77,36 @@ Finally, there's a development mode so you can get live preview of the diagram y
 ## Usage
 
 ### Convert to Structurizr DSL
-```pystructurizr dump --view <path_to_view_file>```
+
+```bash
+pystructurizr dump --view <path_to_view_file>
+```
 
 ### Live preview 
-```pystructurizr dev --view <path_to_view_file>```
+```
+pystructurizr dev --view <path_to_view_file>
+```
 
-### Convert to SVG and upload to cloud storage
-```pystructurizr build --view <path_to_view_file> --gcs-credentials <path_to_credentials_json_file> --bucket-name <string> --object-name <string>```
+### Convert to SVG
+
+Build a `VIEW` into an SVG and save it to `FILE_PATH`.
+
+`FILE_PATH` can be a directory or a file name. If it is a directory, the file name will be the view name.
+
+Can be chained with `upload` to upload the resulting file to a cloud storage provider.
+
+```
+pystructurizr build <dotted_path_to_view_file> <path_to_output_file>
+```
 
 Note that this command uses kroki.io under the hood to generate your SVG file. The benefit is that you don't need to install any tools that understand Structurizr DSL on your machine. The downside is that your diagram code is sent to an online service.
+
+
+### Build And upload to cloud storage
+```
+pystructurizr build <dotted_path_to_view_file> <path_to_output_file> upload --gcs-credentials <path_to_credentials_json_file> --bucket-name <string> --object-name <string>
+```
+
 
 ## License
 

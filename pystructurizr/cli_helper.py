@@ -1,5 +1,4 @@
 import json
-import os
 import subprocess
 import sys
 
@@ -36,9 +35,3 @@ async def generate_svg(diagram_code: dict, tmp_folder: str) -> str:
         await svg_file.write(resp.text)
 
     return svg_file_path
-
-
-def ensure_tmp_folder_exists() -> str:
-    tmp_folder = "/tmp/pystructurizr"
-    os.makedirs(tmp_folder, exist_ok=True)
-    return tmp_folder

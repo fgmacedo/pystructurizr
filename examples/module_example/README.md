@@ -17,5 +17,5 @@ $ pystructurizr dev --view examples.module_example.systemlandscapeview
 ```
 or 
 ```
-$ pystructurizr build --view examples.module_example.systemlandscapeview --gcs-credentials <...> --bucket-name <...> --object-name <...>
+$ pystructurizr build examples.module_example.systemlandscapeview img/ --gcs-credentials <...> --bucket-name <...> --object-name <...>
 ```
